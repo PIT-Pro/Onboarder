@@ -32,4 +32,4 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 #kill all services
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
 /Library/Addigy/user-job -user $loggedInUser -run killall Finder
-/Library/Addigy/user-job -user $loggedInUser -run killall systemuiserver
+/Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer
