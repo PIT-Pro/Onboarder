@@ -7,9 +7,9 @@
 # Run script as user
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
-curl -s https://github.com/PIT-Pro/Onboarding/blob/main/Production/dock.sh | bash
-curl -s https://github.com/PIT-Pro/Onboarding/blob/main/Production/finder.sh | bash
-curl -s https://github.com/PIT-Pro/Onboarding/blob/main/Production/menubar.sh | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarding/main/Production/dock.sh?token=AWGOUBIIQWLVWKW33OYM2QLBW5P2Q)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarding/main/Production/finder.sh?token=AWGOUBIWUNWUUOZH44KDEIDBW5PWC)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarding/main/Production/menubar.sh?token=AWGOUBP2CKVOBAXELBMWJ2LBW5P3S)"
 
 # Refresh Finder & System Preferences
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
