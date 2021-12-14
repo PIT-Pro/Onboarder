@@ -1,6 +1,5 @@
 # Onboarder
 
-
 #### [Laatste releases](https://github.com/PIT-Pro/Onboarder/releases/tag/MDM "Laatste releases")
 
 ##### Werkt in Monterey 12.1
@@ -40,3 +39,9 @@ Release te vinden in Production, staging in Béta.
 - Show Volume in menubar
 - Show VPN in menubar
 - Show VPN connected time in menubar
+
+#### Upcoming for v1.1
+
+- If office is installed, place in Dock
+- Setup Wallpaper
+- Setup Localadmin profile picture
