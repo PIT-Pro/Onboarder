@@ -5,6 +5,10 @@
 
 ##### Werkt in Monterey 12.1
 
+##### Prerequisites:
+###### dockutil
+Deployen via Addigy of JAMF
+
 Onboarding script voor clients opgedeeld in een aantal aanpasbare scripts.
 Release te vinden in Production, staging in Béta.
 
