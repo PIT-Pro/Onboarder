@@ -42,6 +42,6 @@ Release te vinden in Production, staging in Béta.
 
 #### Upcoming for v1.1
 
-- If office is installed, place in Dock
-- Setup Wallpaper
-- Setup Localadmin profile picture
+- If office is installed, place in dock
+- Setup wallpaper
+- Setup localadmin profile picture
