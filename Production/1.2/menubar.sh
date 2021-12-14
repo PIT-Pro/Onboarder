@@ -22,4 +22,3 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 /Library/Addigy/user-job -user $loggedInUser -run open "/System/Library/CoreServices/Menu Extras/vpn.menu"
 # Show VPN connected time in menubar (werkt in Big Sur/Monterey)
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.networkConnect VPNShowTime -string "1"
-
