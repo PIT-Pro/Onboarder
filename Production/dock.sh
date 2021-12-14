@@ -21,7 +21,3 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 # Don't show recent applications in Dock
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false
 
-#kill all services
-/Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
-/Library/Addigy/user-job -user $loggedInUser -run killall Finder
-/Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer
