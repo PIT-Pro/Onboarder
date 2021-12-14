@@ -14,8 +14,6 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Always show scrollbars
 /Library/Addigy/user-job -user $loggedInUser -run defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-# Show Path bar in Finder
-/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 # Show Status bar in Finder
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder ShowStatusBar -bool true
 # Maak home folder de standaard folder als je Finder opent
