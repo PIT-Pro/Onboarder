@@ -4,10 +4,13 @@
 #
 # 2021.12.14 version 1.2 by Thomas Boom | PIT Pro B.V.
 
+# Logged in User in variable
+loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
+
 #check if wallpaper exists, then applies it.
 FILE=/Users/Shared/wallpaper.png
 if [ -f "$FILE" ]; then
-    osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/Shared/wallpaper.png"'
+/Library/Addigy/user-job -user $loggedInUser osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/Shared/wallpaper.png"'
 else 
     echo "$FILE does not exist."
 fi

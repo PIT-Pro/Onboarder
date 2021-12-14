@@ -20,10 +20,10 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 
 if pgrep Microsoft Word > /dev/null
 then
-    /usr/local/bin/dockutil --add "/Applications/Microsoft Word.app"
-    /usr/local/bin/dockutil --add "/Applications/Microsoft Outlook.app"
-    /usr/local/bin/dockutil --add "/Applications/Microsoft Excel.app"
-    /usr/local/bin/dockutil --add "/Applications/Microsoft Powerpoint.app"
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Excel.app" /Users/$loggedInUser
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Powerpoint.app" /Users/$loggedInUser
 else
     echo "Office not installed"
 fi
