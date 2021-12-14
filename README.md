@@ -8,13 +8,14 @@
 Onboarding script voor clients opgedeeld in een aantal aanpasbare scripts.
 Release te vinden in Production, staging in Béta.
 
-##### Functies
+#### Functies
 
-###### Dock
+##### Dock
 
 - Replace dock icons (dockutil moet geinstalleerd zijn/in policy staan)
 - Don't show recent applications in Dock
-- Finder
+
+##### Finder
 
 - Show icons for HDD, servers, removable media
 - Always show scroll bars
