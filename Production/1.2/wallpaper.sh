@@ -10,7 +10,7 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 #check if wallpaper exists, then applies it.
 FILE=/Users/Shared/wallpaper.png
 if [ -f "$FILE" ]; then
-/Library/Addigy/user-job -user $loggedInUser osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/Shared/wallpaper.png"'
+/Library/Addigy/user-job -user $loggedInUser -run osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/Shared/wallpaper.png"'
 else 
     echo "$FILE does not exist."
 fi
