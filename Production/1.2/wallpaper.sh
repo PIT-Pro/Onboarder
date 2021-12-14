@@ -2,7 +2,7 @@
 #
 # per user settings for PIT Pro clients
 #
-# 2021.12.13 version 1.0 by Thomas Boom | PIT Pro B.V.
+# 2021.12.14 version 1.2 by Thomas Boom | PIT Pro B.V.
 
 #check if wallpaper exists, then applies it.
 FILE=/Users/Shared/wallpaper.png
