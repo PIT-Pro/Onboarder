@@ -18,6 +18,16 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 /usr/local/bin/dockutil --remove "Podcasts" /Users/$loggedInUser
 /usr/local/bin/dockutil --add "/Applications/Google Chrome.app" --before "Safari" /Users/$loggedInUser
 
+if pgrep Microsoft Word > /dev/null
+then
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Word.app"
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Outlook.app"
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Excel.app"
+    /usr/local/bin/dockutil --add "/Applications/Microsoft Powerpoint.app"
+else
+    echo "Office not installed"
+fi
+
 # Don't show recent applications in Dock
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false
 
