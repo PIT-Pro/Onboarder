@@ -8,9 +8,9 @@
 #
 # PREREQUISITE: dockutil
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarding/main/Beta/dock.sh)"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarding/main/Beta/finder.sh)"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarding/main/Beta/menubar.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/dock.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/dock.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/dock.sh)"
 
 # Refresh Finder & System Preferences
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
