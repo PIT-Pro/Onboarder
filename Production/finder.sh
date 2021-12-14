@@ -29,7 +29,4 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 # Prevent Photos from opening automatically when devices are plugged in
 /Library/Addigy/user-job -user $loggedInUser -run defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true 
 
-#kill all services
-/Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
-/Library/Addigy/user-job -user $loggedInUser -run killall Finder
-/Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer
+

@@ -23,7 +23,3 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 # Show VPN connected time in menubar (werkt in Big Sur/Monterey)
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.networkConnect VPNShowTime -string "1"
 
-#kill all services
-/Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
-/Library/Addigy/user-job -user $loggedInUser -run killall Finder
-/Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer
