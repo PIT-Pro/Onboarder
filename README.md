@@ -13,6 +13,9 @@ Release te vinden in Production, staging in Béta.
 
 #### Functies
 
+##### Wallpaper
+Changes wallpaper to /User/Shared/wallpaper.png if file is found
+
 ##### Dock
 
 - Replace dock icons (dockutil moet geinstalleerd zijn/in policy staan)
