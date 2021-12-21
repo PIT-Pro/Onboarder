@@ -43,8 +43,15 @@ Changes wallpaper to /User/Shared/wallpaper.png if file is found
 - Show VPN in menubar
 - Show VPN connected time in menubar
 
-#### Upcoming for v1.1
+##### Software Updates
 
-- If office is installed, place in dock
-- Setup wallpaper
-- Setup localadmin profile picture
+- Disable automatically:
+    - Check for updates
+    - Download new updates when available
+    - Install macOS updates
+    - Install app updates from the App Store
+
+
+#### Upcoming for v1.4
+
+- Automatically set up user profile picture
