@@ -7,5 +7,5 @@ dscl . delete /Users/$loggedInUser jpegphoto
 dscl . delete /Users/$loggedInUser Picture
 dscl . create /Users/$loggedInUser Picture "/Users/Shared/profile.png" 
 else 
-    echo "$FILE does not exist. Check if wallpaper file is present in /Users/Shared/"
+    echo "$FILE does not exist, check if wallpaper file is present in /Users/Shared/"
 fi
