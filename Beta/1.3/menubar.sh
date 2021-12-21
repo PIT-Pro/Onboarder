@@ -7,7 +7,6 @@
 #stopt logged in user in variabele
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
-echo "MENUBAR SCRIPT RUNNING"
 # Show battery percentage in menubar (werkt in Big Sur/Monterey)
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 # Tijd en datum (werkt in Big Sur/Monterey)
