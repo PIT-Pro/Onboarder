@@ -17,7 +17,7 @@ then
         declare -x PICIMPORT="/Library/Caches/${USERNAME}.picture.dsimport"
         printf "%s %s \n%s:%s" "${MAPPINGS}" "${ATTRS}" "${USERNAME}" "${USERPIC}" >"${PICIMPORT}"
         if ${ID_CMD} "${USERNAME}" &>/dev/null ; then
-            ${DSIMPORT_CMD} "${PICIMPORT}" /Local/Default M &&
+            ${DSIMPORT_CMD} "${PICIMPORT}" /Local/Default M
             fi
     fi
 fi
