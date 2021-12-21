@@ -24,8 +24,8 @@ echo "Show all filename extensions" $(/Library/Addigy/user-job -user $loggedInUs
 # When performing a search, search the current folder by default
 echo "When performing a search in Finder, search the current folder by default" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder FXDefaultSearchScope -string "SCcf")
 # Save to disk (not to iCloud) by default
-echo "Save to Disk (not to iCloud) by default" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false)
+/Library/Addigy/user-job -user $loggedInUser -run defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Prevent Photos from opening automatically when devices are plugged in
-echo "Prevent Photos from opening automatically when device is plugged in" $(/Library/Addigy/user-job -user $loggedInUser -run defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true)
+/Library/Addigy/user-job -user $loggedInUser -run defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 
