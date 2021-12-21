@@ -7,6 +7,8 @@
 # Run script as user
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
+echo "DOCK SCRIPT RUNNING"
+
 #replace dock icons (dockutil moet geinstalleerd zijn/in policy staan)
 /usr/local/bin/dockutil --remove "Maps" /Users/$loggedInUser
 /usr/local/bin/dockutil --remove "Photos" /Users/$loggedInUser

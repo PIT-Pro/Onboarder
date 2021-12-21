@@ -7,6 +7,8 @@
 # Run script as user
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
+echo "FINDER SCRIPT RUNNING"
+
 #Show icons for HDD, servers, removable media
 echo "Show external drives connected on desktop" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true)
 echo "Show hard drives connected on desktop" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true)
