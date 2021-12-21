@@ -24,6 +24,6 @@ echo "Disabling automatic macOS updates"
 
 # Refresh Finder & System Preferences
 echo "Refreshing Finder and System Preferences"
-/Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
-/Library/Addigy/user-job -user $loggedInUser -run killall Finder
-/Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer
+/Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter 1> /dev/null
+/Library/Addigy/user-job -user $loggedInUser -run killall Finder 1> /dev/null
+/Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer 1> /dev/null
