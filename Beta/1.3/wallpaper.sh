@@ -12,5 +12,5 @@ FILE=/Users/Shared/wallpaper.png
 if [ -f "$FILE" ] ; then
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/Shared/wallpaper.png"' /Users/$loggedInUser
 else 
-    echo "$FILE does not exist."
+    echo "$FILE does not exist. Check if wallpaper file is present in /Users/Shared/"
 fi
