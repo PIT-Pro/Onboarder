@@ -9,19 +9,21 @@
 # PREREQUISITE: dockutil
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
-echo "DOCK"
+echo "Removing Apple items and adding Office items in Dock"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/dock.sh)"
-echo "FINDER"
+echo "Tweaking Finder experience"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/finder.sh)"
-echo "MENUBAR"
+echo "Adding items to Menubar"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/menubar.sh)"
-echo "WALLPAPER"
+echo "Changing wallpaper image to Company wallpaper"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/wallpaper.sh)"
-echo "PROFILE PICTURE"
+echo "Changing profile picture to Company logo"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/profile.sh)"
+echo "Disabling automatic macOS updates"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/softwareupdate.sh)"
 
 # Refresh Finder & System Preferences
-echo "REFRESHING FINDER & SYSTEM PREFERENCES"
+echo "Refreshing Finder and System Preferences"
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
 /Library/Addigy/user-job -user $loggedInUser -run killall Finder
 /Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer

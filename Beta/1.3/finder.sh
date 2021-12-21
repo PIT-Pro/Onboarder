@@ -18,7 +18,7 @@ echo "Always show scrollbars in Finder" $(/Library/Addigy/user-job -user $logged
 # Show Status bar in Finder
 echo "Show status bar in Finder" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder ShowStatusBar -bool true)
 # Maak home folder de standaard folder als je Finder opent
-echo "Make Home folder standard openingfolder in Finder" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder NewWindowTarget PfHm)
+echo "Make Home folder standard opening folder in Finder" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder NewWindowTarget PfHm)
 # Show all filename extensions
 echo "Show all filename extensions" $(/Library/Addigy/user-job -user $loggedInUser -run defaults write NSGlobalDomain AppleShowAllExtensions -bool true)
 # When performing a search, search the current folder by default
