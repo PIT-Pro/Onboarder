@@ -21,6 +21,7 @@ echo "PROFILE PICTURE"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.3/profile.sh)"
 
 # Refresh Finder & System Preferences
+echo "REFRESHING FINDER & SYSTEM PREFERENCES"
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter
 /Library/Addigy/user-job -user $loggedInUser -run killall Finder
 /Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer
