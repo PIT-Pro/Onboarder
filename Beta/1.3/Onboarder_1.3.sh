@@ -2,11 +2,10 @@
 #
 # per user settings for PIT Pro clients
 #
-# 2021.12.14 version 1.3 by Thomas Boom, Jeroen Potters | PIT Pro B.V.
+# 2021.12.21 version 1.3 by Thomas Boom | PIT Pro B.V.
+## PREREQUISITE: dockutil
 #
 # Run script as user
-#
-# PREREQUISITE: dockutil
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
 echo "Removing macOS items and adding Office items in Dock"
