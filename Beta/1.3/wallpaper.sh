@@ -9,7 +9,7 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 
 #check if wallpaper exists, then applies it.
 FILE=/Users/Shared/wallpaper.png
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ] ; then
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/Shared/wallpaper.png"' /Users/$loggedInUser
 else 
     echo "$FILE does not exist."
@@ -20,7 +20,7 @@ FILE=/Users/Shared/profile.png
 if [ -f "$FILE" ]; then
 dscl . delete /Users/$loggedInUser jpegphoto
 dscl . delete /Users/$loggedInUser Picture
-dscl . create /Users/$loggedInUser Picture "/Users/Shared/profile.jpg"
+dscl . create /Users/$loggedInUser Picture "/Users/Shared/profile.jpg" 
 else 
     echo "$FILE does not exist."
 fi
