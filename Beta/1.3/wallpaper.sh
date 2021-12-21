@@ -14,13 +14,3 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/U
 else 
     echo "$FILE does not exist."
 fi
-
-#change profile picture of logged in user
-FILE=/Users/Shared/profile.png
-if [ -f "$FILE" ]; then
-dscl . delete /Users/$loggedInUser jpegphoto
-dscl . delete /Users/$loggedInUser Picture
-dscl . create /Users/$loggedInUser Picture "/Users/Shared/profile.jpg" 
-else 
-    echo "$FILE does not exist."
-fi
