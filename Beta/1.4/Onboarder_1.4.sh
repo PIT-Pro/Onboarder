@@ -20,7 +20,7 @@ echo "Changing profile picture to /Users/Shared/profile.png"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/profile.sh)" 1> /dev/null
 echo "Disabling automatic macOS updates"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/softwareupdate.sh)" 1> /dev/null
-echo "Installing Canon C5535 Printer"
+echo "Installing Canon Printer"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/printer.sh)" 1> /dev/null
 
 
@@ -29,5 +29,5 @@ echo "Refreshing Finder and System Preferences"
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter 1> /dev/null
 /Library/Addigy/user-job -user $loggedInUser -run killall Finder 1> /dev/null
 /Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer 1> /dev/null
-
+echo "Done!"
 exit 0
