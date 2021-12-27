@@ -9,19 +9,19 @@
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
 echo "Removing macOS items and adding Office items in Dock"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/dock.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/dock.sh)" 1> /dev/null
 echo "Tweaking Finder experience"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/finder.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/finder.sh)" 1> /dev/null
 echo "Adding items to Menubar"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/menubar.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/menubar.sh)" 1> /dev/null
 echo "Changing wallpaper image to /Users/Shared/wallpaper.png"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/wallpaper.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/wallpaper.sh)" 1> /dev/null
 echo "Changing profile picture to /Users/Shared/profile.png"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/profile.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/profile.sh)" 1> /dev/null
 echo "Disabling automatic macOS updates"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/softwareupdate.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/softwareupdate.sh)" 1> /dev/null
 echo "Installing Canon Printer"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.3/printer.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4/printer.sh)" 1> /dev/null
 
 
 # Refresh Finder & System Preferences
