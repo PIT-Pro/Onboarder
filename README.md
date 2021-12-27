@@ -50,8 +50,4 @@ Changes wallpaper to /User/Shared/wallpaper.png if file is found
     - Download new updates when available
     - Install macOS updates
     - Install app updates from the App Store
-
-
-#### Upcoming for v1.4
-
-- Automatically set up user profile picture
+    
