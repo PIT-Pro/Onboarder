@@ -18,7 +18,7 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 /Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Podcasts" /Users/$loggedInUser
 /Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Google Chrome.app" --before "Safari" /Users/$loggedInUser
 
-if pgrep Microsoft Word > /dev/null
+if pgrep -u $loggedInUser Microsoft Word > /dev/null
 then
     /Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
     /Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
