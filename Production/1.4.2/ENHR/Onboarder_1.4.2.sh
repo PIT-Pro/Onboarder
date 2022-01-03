@@ -26,6 +26,7 @@ echo "Installing Canon Printer"
 
 # Refresh Finder & System Preferences
 echo "Refreshing Finder and System Preferences"
+/Library/Addigy/user-job -user $loggedInUser -run killall Dock 1> /dev/null
 /Library/Addigy/user-job -user $loggedInUser -run killall ControlCenter 1> /dev/null
 /Library/Addigy/user-job -user $loggedInUser -run killall Finder 1> /dev/null
 /Library/Addigy/user-job -user $loggedInUser -run killall SystemUIServer 1> /dev/null
