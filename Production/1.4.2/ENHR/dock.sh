@@ -29,6 +29,8 @@ else
     echo "Office not installed"
 fi
 
+killall Dock
+
 # Don't show recent applications in Dock
  /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false
 
