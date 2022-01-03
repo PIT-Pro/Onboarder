@@ -8,22 +8,22 @@
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
 #replace dock icons (dockutil moet geinstalleerd zijn/in policy staan)
-dockutil --remove "Maps" /Users/$loggedInUser
-dockutil --remove "Photos" /Users/$loggedInUser 
-dockutil --remove "FaceTime" /Users/$loggedInUser
-dockutil --remove "Contacts" /Users/$loggedInUser
-dockutil --remove "Reminders" /Users/$loggedInUser
-dockutil --remove "Music" /Users/$loggedInUser
-dockutil --remove "TV" /Users/$loggedInUser
-dockutil --remove "Podcasts" /Users/$loggedInUser
-dockutil --add "/Applications/Google Chrome.app" --before "Safari" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Maps" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Photos" /Users/$loggedInUser 
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "FaceTime" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Contacts" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Reminders" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Music" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "TV" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --remove "Podcasts" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Google Chrome.app" --before "Safari" /Users/$loggedInUser
 
 if pgrep Microsoft Word > /dev/null
 then
-dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
-dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
-dockutil --add "/Applications/Microsoft Excel.app" /Users/$loggedInUser
-dockutil --add "/Applications/Microsoft Powerpoint.app" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Microsoft Excel.app" /Users/$loggedInUser
+/Library/Addigy/user-job -user $loggedInUser -run dockutil --add "/Applications/Microsoft Powerpoint.app" /Users/$loggedInUser
 else
     echo "Office not installed"
 fi
