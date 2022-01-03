@@ -11,19 +11,19 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
 userjob=/Library/Addigy/user-job
 
 echo "Removing macOS items and adding Office items in Dock"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/dock.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/dock.sh)" 1> /dev/null
 echo "Tweaking Finder experience"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/finder.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/finder.sh)" 1> /dev/null
 echo "Adding items to Menubar"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/menubar.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/menubar.sh)" 1> /dev/null
 echo "Changing wallpaper image to /Users/Shared/wallpaper.png"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/wallpaper.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/wallpaper.sh)" 1> /dev/null
 echo "Changing profile picture to /Users/Shared/profile.png"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/profile.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/profile.sh)" 1> /dev/null
 echo "Disabling automatic macOS updates"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/softwareupdate.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/ENHR/softwareupdate.sh)" 1> /dev/null
 echo "Installing Canon Printer"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.4.2/ENHR/printer.sh)" 1> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/printer.sh)" 1> /dev/null
 
 
 # Refresh Finder & System Preferences

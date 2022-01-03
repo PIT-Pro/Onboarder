@@ -12,11 +12,11 @@ sleep=/bin/sleep
 
 $dockutil --remove all
 $sleep 2
-$dockutil --add '/Applications/Safari.app' --no-restart --all-homes
-$dockutil --add '/Applications/Notes.app' --no-restart --all-homes
-$dockutil --add '/Applications/Launchpad.app' --no-restart --all-homes
-$dockutil --add '/Applications/Calendar.app' --no-restart --all-homes
+$dockutil --add 'Safari' --no-restart --all-homes
+$dockutil --add 'Notes' --no-restart --all-homes
+$dockutil --add 'Launchpad' --no-restart --all-homes
+$dockutil --add 'Calendar' --no-restart --all-homes
 $dockutil --add '/Applications/Google Chrome.app' --no-restart --all-homes
 $dockutil --add '/Applications/Microsoft Word.app' --no-restart --all-homes
-$dockutil --add '/Applications/System Preferences.app' --no-restart --all-homes
+$dockutil --add 'System Preferences' --no-restart --all-homes
 $dockutil --add '~/Downloads' --view grid --display folder --all-homes
