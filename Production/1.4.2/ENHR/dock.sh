@@ -18,7 +18,7 @@ dockutil --remove "TV" /Users/$loggedInUser
 dockutil --remove "Podcasts" /Users/$loggedInUser
 dockutil --add "/Applications/Google Chrome.app" --before "Safari" /Users/$loggedInUser
 
-if pgrep -u $loggedInUser Microsoft Word > /dev/null
+if pgrep Microsoft Word > /dev/null
 then
 dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
 dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
