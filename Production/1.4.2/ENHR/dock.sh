@@ -35,3 +35,4 @@ killall Dock
  /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false
 
 killall Dock
+
