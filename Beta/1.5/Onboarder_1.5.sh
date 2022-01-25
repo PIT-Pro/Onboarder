@@ -9,27 +9,36 @@
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
 userjob=/Library/Addigy/user-job
+LOGFILE=/Users/Shared/onboarder_log.txt
 
-echo "Removing macOS items and adding Office items in Dock"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/dock.sh)" 1> /dev/null
-echo "Tweaking Finder experience"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/finder.sh)" 1> /dev/null
-echo "Adding items to Menubar"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/menubar.sh)" 1> /dev/null
-echo "Changing wallpaper image to /Users/Shared/wallpaper.png"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/wallpaper.sh)" 1> /dev/null
-echo "Changing profile picture to /Users/Shared/profile.png"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/profile.sh)" 1> /dev/null
-echo "Disabling automatic macOS updates"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/ENHR/softwareupdate.sh)" 1> /dev/null
-echo "Installing Canon Printer"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/printer.sh)" 1> /dev/null
+if [ -e $LOGFILE ]
+then
+    echo "onboarder_log.txt exists, writing output to file.."
+else
+    echo "onboarder_log.txt does not exist, creating file.."
+fi
+
+echo "START OF SCRIPT" >> $LOGFILE
+echo "Removing macOS items and adding Office items in Dock" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/dock.sh)" | tee -a $LOGFILE
+echo "Tweaking Finder experience" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/finder.sh)" | tee -a $LOGFILE
+echo "Adding items to Menubar" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/menubar.sh)" | tee -a $LOGFILE
+echo "Changing wallpaper image to /Users/Shared/wallpaper.png" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/wallpaper.sh)" | tee -a $LOGFILE
+echo "Changing profile picture to /Users/Shared/profile.png" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/profile.sh)" | tee -a $LOGFILE
+echo "Disabling automatic macOS updates" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/softwareupdate.sh)" | tee -a $LOGFILE
+echo "Installing Canon Printer" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/printer.sh)" | tee -a $LOGFILE
 
 
 # Refresh Finder & System Preferences
-echo "Refreshing Finder and System Preferences"
-$userjob -user $loggedInUser -run killall ControlCenter 1> /dev/null
-$userjob -user $loggedInUser -run killall Finder 1> /dev/null
-$userjob -user $loggedInUser -run killall SystemUIServer 1> /dev/null
-echo "Done!"
+echo "Refreshing Finder and System Preferences" | tee -a $LOGFILE
+$userjob -user $loggedInUser -run killall ControlCenter  | tee -a $LOGFILE
+$userjob -user $loggedInUser -run killall Finder  | tee -a $LOGFILE
+$userjob -user $loggedInUser -run killall SystemUIServer  | tee -a $LOGFILE
+echo "Done!" | tee -a $LOGFILE
 exit 0
