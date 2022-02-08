@@ -32,7 +32,6 @@ then
 else
     echo "Office not installed"
 fi
-
 # Don't show recent applications in Dock
-$user-job -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false
+$userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false
 

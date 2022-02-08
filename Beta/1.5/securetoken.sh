@@ -1,11 +1,10 @@
 SECURE_TOKEN_USER="securetoken"
 SECURE_TOKEN_USER_PASS="tokenpassword"
 NEW_SECURE_TOKEN_USER="localadmin"
-NEW_SECURE_TOKEN_USER_PASS=""
+NEW_SECURE_TOKEN_USER_PASS="ebFr4mCc"
 
 # Give local admin user secure token using admin user credentials established as part of Setup Assistant
-/usr/sbin/sysadminctl -adminUser "$SECURE_TOKEN_USER" -adminPassword "$SECURE_TOKEN_USER_PASS" -secureTokenOn "$NEW_SECURE_TOKEN_USER" -password "$NEW_SECURE_TOKEN_USER_PASS"
-exitresult=$(/bin/echo $?)
+sysadminctl -adminUser $SECURE_TOKEN_USER -adminPassword tokenpassword -secureTokenOn $NEW_SECURE_TOKEN_USER -password ebFr4mCc
 
 if [ "$exitresult" = 0 ]; then
     /bin/echo "Successfully added secure Token to ${NEW_SECURE_TOKEN_USER}!"

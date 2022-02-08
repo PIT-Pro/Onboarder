@@ -18,7 +18,7 @@ else
     echo "onboarder_log.txt does not exist, creating file.."
 fi
 
-echo "START OF SCRIPT" >> $LOGFILE
+echo "START OF SCRIPT" | tee -a $LOGFILE
 echo "Removing macOS items and adding Office items in Dock" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/dock.sh)" | tee -a $LOGFILE
 echo "Tweaking Finder experience" | tee -a $LOGFILE
@@ -33,6 +33,10 @@ echo "Disabling automatic macOS updates" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/softwareupdate.sh)" | tee -a $LOGFILE
 echo "Installing Canon Printer" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/printer.sh)" | tee -a $LOGFILE
+echo "Creating temporary admin user" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/temp_admin.sh)" | tee -a $LOGFILE
+echo "Enabling SecureToken for Localadmin and removing temporary admin user" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Beta/1.5/securetoken.sh)" | tee -a $LOGFILE
 
 
 # Refresh Finder & System Preferences
