@@ -29,7 +29,8 @@ echo "Changing wallpaper image to /Users/Shared/wallpaper.png" | tee -a $LOGFILE
 echo "Changing profile picture to /Users/Shared/profile.png" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/profile.sh)" | tee -a $LOGFILE
 echo "Disabling automatic macOS updates" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/softwareupdate.sh)" | tee -a $LOGFILE
+echo "Write to defaults softwareupdate.sh deprecated macOS 12.3" | tee -a $LOGFILE
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/softwareupdate.sh)" | tee -a $LOGFILE
 echo "Installing Canon Printer" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/printer.sh)" | tee -a $LOGFILE
 
