@@ -3,7 +3,6 @@
 # per user settings for PIT Pro clients
 #
 # 2021.12.21 version 1.3 by Thomas Boom | PIT Pro B.V.
-
 userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 sleep=/bin/sleep

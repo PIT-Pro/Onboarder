@@ -19,19 +19,19 @@ fi
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
 echo "Removing macOS items and adding Office items in Dock" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/dock.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/dock.sh)" | tee -a $LOGFILE
 echo "Tweaking Finder experience" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/finder.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/finder.sh)" | tee -a $LOGFILE
 echo "Adding items to Menubar" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/menubar.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/menubar.sh)" | tee -a $LOGFILE
 echo "Changing wallpaper image to /Users/Shared/wallpaper.png" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/wallpaper.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/wallpaper.sh)" | tee -a $LOGFILE
 echo "Changing profile picture to /Users/Shared/profile.png" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/profile.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/profile.sh)" | tee -a $LOGFILE
 echo "Disabling automatic macOS updates" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/softwareupdate.sh)" | tee -a $LOGFILE
-echo "Installing Kyocera Printer" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.5/SITE/printer.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/softwareupdate.sh)" | tee -a $LOGFILE
+echo "Installing Canon Printer" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/printer.sh)" | tee -a $LOGFILE
 
 
 
