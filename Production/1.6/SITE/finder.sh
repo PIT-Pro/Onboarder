@@ -6,6 +6,7 @@
 #
 # Run script as user
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
+userjob=/Library/Addigy/user-job
 
 #Show icons for HDD, servers, removable media
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
