@@ -29,15 +29,15 @@ then
     $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Teams.app" 
 else
     echo "Office not installed"
+fi
 
 if pgrep -u $loggedInUser WhatsApp > /dev/null
 then
     $userjob -user $loggedInUser -run dockutil --add "/Applications/WhatsApp.app" 
 else
     echo "WhatsApp not installed"
+fi
 
 # Don't show recent applications in Dock
 $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
 sleep 1
-
-fi
