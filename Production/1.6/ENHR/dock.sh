@@ -8,6 +8,8 @@ defaults write com.apple.dock persistent-apps -array
 
 killall Dock
 
+sleep 2
+
 #replace dock icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
