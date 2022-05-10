@@ -5,7 +5,6 @@ loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ &&
  
  #remove all dock icons first
 defaults write com.apple.dock persistent-apps -array
-
 killall Dock
 
 sleep 5
