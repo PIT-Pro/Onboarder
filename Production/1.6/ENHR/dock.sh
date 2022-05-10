@@ -40,4 +40,4 @@ fi
 
 # Don't show recent applications in Dock
 $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
-sleep 1
+exit
