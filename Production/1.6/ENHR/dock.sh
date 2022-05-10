@@ -7,12 +7,12 @@ loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ &&
 $userjob -user $loggedInUser -run $dockutil --remove all --no restart /Users/$loggedInUser
 
 #replace dock icons ($dockutil moet geinstalleerd zijn/in policy staan)
-$userjob -user $loggedInUser -run $dockutil --add '/System/Applications/Launchpad.app' --no-restart /Users/$loggedInUser
+$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add '/Applications/Safari.app' --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add '/System/Applications/System Preferences.app' --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add '/Applications/Calendar.app' --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add '/Applications/FaceTime.app' --no-restart /Users/$loggedInUser
+$userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
+$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/$loggedInUser
+$userjob -user $loggedInUser -run $dockutil --add "/Applications/Calendar.app" --no-restart /Users/$loggedInUser
+$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/$loggedInUser
 
 if pgrep -u $loggedInUser Microsoft Word > /dev/null
 then
