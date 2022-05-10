@@ -4,7 +4,7 @@ sleep=/bin/sleep
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
  #remove all dock icons first
-$userjob -run $dockutil --remove all /Users/$loggedInuser
+defaults write com.apple.dock persistent-apps -array
 
 killall Dock
 
@@ -18,11 +18,11 @@ $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime
 
 if pgrep -u $loggedInUser Microsoft Word > /dev/null
 then
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Excel.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Powerpoint.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Teams.app" /Users/$loggedInUser
+    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Word.app" --no-restart /Users/$loggedInUser
+    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Outlook.app" --no-restart /Users/$loggedInUser
+    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Excel.app" --no-restart /Users/$loggedInUser
+    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Powerpoint.app" --no-restart /Users/$loggedInUser
+    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Teams.app" --no-restart /Users/$loggedInUser
 else
     echo "Office not installed"
 fi
@@ -37,7 +37,7 @@ fi
 # Don't show recent applications in Dock
 $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
 
-killall Dock
+killall -KILL Dock
 exit
 
 
