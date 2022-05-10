@@ -29,7 +29,7 @@ echo "Changing wallpaper image to /Users/Shared/wallpaper.png" | tee -a $LOGFILE
 echo "Changing profile picture to /Users/Shared/profile.png" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/SITE/profile.sh)" | tee -a $LOGFILE
 echo "Disabling automatic macOS updates" | tee -a $LOGFILE
-echo "Write to defaults softwareupdate.sh deprecated macOS 12.3" | tee -a $LOGFILE
+#echo "Write to defaults softwareupdate.sh deprecated macOS 12.3" | tee -a $LOGFILE
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/SITE/softwareupdate.sh)" | tee -a $LOGFILE
 echo "Installing Kyocera Printer" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/SITE/printer.sh)" | tee -a $LOGFILE

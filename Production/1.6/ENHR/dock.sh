@@ -2,32 +2,42 @@
 #Thanks Tobias Morrison!
 # per user settings for PIT Pro clients
 #
-# 2021.12.21 version 1.3 by Thomas Boom | PIT Pro B.V.
+# 2021.12.21 version 1.6 by Thomas Boom | PIT Pro B.V.
 userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 sleep=/bin/sleep
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
+ #remove all dock icons first
+$userjob -user $loggedInUser -run dockutil --remove all --no restart
+
 #replace dock icons (dockutil moet geinstalleerd zijn/in policy staan)
-$userjob -user $loggedInUser -run dockutil --remove "Maps" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "Photos" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "FaceTime" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "Contacts" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "Reminders" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "Music" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "TV" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --remove "Podcasts" /Users/$loggedInUser
-$userjob -user $loggedInUser -run dockutil --add "/Applications/Google Chrome.app" --before "Safari" /Users/$loggedInUser
+$userjob -user $loggedInUser -run dockutil --add '/System/Applications/Launchpad.app' --no-restart
+$userjob -user $loggedInUser -run dockutil --add "/Applications/Google Chrome.app" --before "Safari" --no-restart
+$userjob -user $loggedInUser -run dockutil --add '/Applications/Safari.app' --no-restart
+$userjob -user $loggedInUser -run dockutil --add '/System/Applications/System Preferences.app' --no-restart
+$userjob -user $loggedInUser -run dockutil --add '/Applications/Calendar.app'
+$userjob -user $loggedInUser -run dockutil --add '/Applications/FaceTime.app'
+
 
 if pgrep -u $loggedInUser Microsoft Word > /dev/null
 then
-    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Word.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Outlook.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Excel.app" /Users/$loggedInUser
-    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Powerpoint.app" /Users/$loggedInUser
+    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Word.app" 
+    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Outlook.app" 
+    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Excel.app" 
+    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Powerpoint.app"
+    $userjob -user $loggedInUser -run dockutil --add "/Applications/Microsoft Teams.app" 
 else
     echo "Office not installed"
-fi
+
+if pgrep -u $loggedInUser WhatsApp > /dev/null
+then
+    $userjob -user $loggedInUser -run dockutil --add "/Applications/WhatsApp.app" 
+else
+    echo "WhatsApp not installed"
+
 # Don't show recent applications in Dock
 $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
+sleep 1
 
+fi
