@@ -4,7 +4,9 @@ sleep=/bin/sleep
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
  #remove all dock icons first
-$userjob -user $loggedInUser -run $dockutil --remove all
+$userjob -run $dockutil --remove all /Users/$loggedInuser
+
+killall Dock
 
 #replace dock icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
