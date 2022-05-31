@@ -23,3 +23,5 @@ $userjob -user $loggedInUser -run defaults write com.apple.systemuiserver menuEx
 $userjob -user $loggedInUser -run open "/System/Library/CoreServices/Menu Extras/vpn.menu"
 # Show VPN connected time in menubar (works in Big Sur/Monterey)
 $userjob -user $loggedInUser -run defaults write com.apple.networkConnect VPNShowTime -string "1"
+# Enable fast user switching
+$userjob -user $loggedInUser -run defaults write ~/Library/Preferences/com.apple.systemuiserver.plist menuExtras -array-add '<string>/System/Library/CoreServices/Menu Extras/User.menu</string>'
