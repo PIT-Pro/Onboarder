@@ -34,8 +34,6 @@ echo "Disabling automatic macOS updates" | tee -a $LOGFILE
 echo "Installing Canon Printer" | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/ENHR/printer.sh)" | tee -a $LOGFILE
 
-
-
 # Refresh Finder & System Preferences
 echo "Refreshing Finder and System Preferences" | tee -a $LOGFILE
 killall ControlCenter  | tee -a $LOGFILE
