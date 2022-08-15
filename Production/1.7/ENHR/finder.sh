@@ -23,5 +23,3 @@ userjob=/Library/Addigy/user-job
 /Library/Addigy/user-job -user $loggedInUser -run defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # When performing a search, search the current folder by default
 /Library/Addigy/user-job -user $loggedInUser -run defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
-

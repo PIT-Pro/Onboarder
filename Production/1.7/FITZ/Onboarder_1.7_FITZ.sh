@@ -19,15 +19,15 @@ fi
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
 echo "Tweaking Finder experience" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/FITZ/finder.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.7/FITZ/finder.sh)" | tee -a $LOGFILE
 echo "Adding items to Menubar" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/FITZ/menubar.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.7/FITZ/menubar.sh)" | tee -a $LOGFILE
 echo "Changing wallpaper image to /Users/Shared/wallpaper.png" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/FITZ/wallpaper.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.7/FITZ/wallpaper.sh)" | tee -a $LOGFILE
 echo "Changing profile picture to /Users/Shared/profile.png" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/FITZ/profile.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.7/FITZ/profile.sh)" | tee -a $LOGFILE
 echo "Installing Konica Minolta Printer" | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.6/FITZ/printer.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.7/FITZ/printer.sh)" | tee -a $LOGFILE
 
 # Refresh Finder & System Preferences
 echo "Refreshing Finder and System Preferences" | tee -a $LOGFILE
