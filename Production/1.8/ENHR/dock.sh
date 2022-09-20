@@ -15,13 +15,14 @@ sleep 5
 
 $userjob -user $loggedInUser -run $dockutil --remove all --no-restart
 
-#replace dock icons ($dockutil moet geinstalleerd zijn/in policy staan)
+#replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/$loggedInUser
 
+#add custom software icons
 if [ -d "/Applications/Microsoft Word.app" ]; then
 
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Word.app" --no-restart /Users/$loggedInUser
@@ -52,7 +53,7 @@ fi
 if [ -d "/Applications/Microsoft Teams.app" ]; then
 
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Teams.app" --no-restart /Users/$loggedInUser
-    
+
 else
     echo "Microsoft Teams not installed"
 fi
