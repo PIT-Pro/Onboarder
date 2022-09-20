@@ -23,6 +23,8 @@ echo "emptying dock.."
 $userjob -user $loggedInUser -run $dockutil --remove all --no-restart
 killall Dock
 
+sleep 5
+
 echo "Tweaking Finder experience.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/finder.sh)" | tee -a $LOGFILE
 
