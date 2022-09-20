@@ -5,7 +5,7 @@ dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
  #remove all dock icons first
- 
+
 defaults write com.apple.dock persistent-apps -array
 killall Dock
 
@@ -17,7 +17,7 @@ $userjob -user $loggedInUser -run $dockutil --remove all --no-restart
 
 #replace dock icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Safari.app" --no-restart /Users/$loggedInUser
+$userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/$loggedInUser
