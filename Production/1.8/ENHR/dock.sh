@@ -5,6 +5,7 @@ dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
  #remove all dock icons first
+ 
 defaults write com.apple.dock persistent-apps -array
 killall Dock
 
