@@ -12,26 +12,26 @@ sleep 5
 
 #replace dock icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/"$loggedInUser"
-$userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/"$loggedInUser"
-$userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/"$loggedInUser"
+$userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Google Chrome.app" --no-restart /Users/"$loggedInUser"
+$userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Safari.app" --no-restart /Users/"$loggedInUser"
 $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/"$loggedInUser"
-$userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Calendar.app" --no-restart /Users/"$loggedInUser"
+$userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/"$loggedInUser"
 $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/"$loggedInUser"
 
 if pgrep -u "$loggedInUser" Microsoft Word > /dev/null
 then
-    $userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Microsoft Word.app" --no-restart /Users/"$loggedInUser"
-    $userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Microsoft Outlook.app" --no-restart /Users/"$loggedInUser"
-    $userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Microsoft Excel.app" --no-restart /Users/"$loggedInUser"
-    $userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Microsoft Powerpoint.app" --no-restart /Users/"$loggedInUser"
-    $userjob -user "$loggedInUser" -run $dockutil --add "/Applications/Microsoft Teams.app" --no-restart /Users/"$loggedInUser"
+    $userjob -user "$loggedInUser" -run $dockutil --add "/Volumes/Macintosh HD/Applications/Microsoft Word.app" --no-restart /Users/"$loggedInUser"
+    $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Microsoft Outlook.app" --no-restart /Users/"$loggedInUser"
+    $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Microsoft Excel.app" --no-restart /Users/"$loggedInUser"
+    $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Microsoft Powerpoint.app" --no-restart /Users/"$loggedInUser"
+    $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/Microsoft Teams.app" --no-restart /Users/"$loggedInUser"
 else
     echo "Office not installed"
 fi
 
 if pgrep -u "$loggedInUser" WhatsApp > /dev/null
 then
-    $userjob -user "$loggedInUser" -run $dockutil --add "/Applications/WhatsApp.app" /Users/"$loggedInUser"
+    $userjob -user "$loggedInUser" -run $dockutil --add "/System/Applications/WhatsApp.app" /Users/"$loggedInUser"
 else
     echo "WhatsApp not installed"
 fi
