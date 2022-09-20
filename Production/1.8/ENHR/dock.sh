@@ -15,6 +15,8 @@ sleep 5
 
 $userjob -user $loggedInUser -run $dockutil --remove all --no-restart
 
+killall -KILL Dock
+
 #replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
