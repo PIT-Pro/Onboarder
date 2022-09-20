@@ -7,4 +7,4 @@
 #
 # Run script as user
 cupsctl WebInterface=yes
-lpadmin -p Canon_5355i -P /Library/Printers/PPDs/Contents/Resources/CNMCIRAC5535S2.ppd.gz -v socket://172.16.17.40 -o CNDuplex=DuplexFront -o CNColorMode=mono -o ColorModel=Gray -E 
+lpadmin -p Konica_Minolta_BizHub_C258 -P /Library/Printers/PPDs/Contents/Resources/KONICAMINOLTAC258.gz -v socket://172.16.192.40 -o CNDuplex=DuplexFront -o CNColorMode=mono -o ColorModel=Gray -E 

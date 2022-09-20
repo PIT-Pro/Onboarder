@@ -4,18 +4,12 @@ userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
-#empty dock
-$userjob -user $loggedInUser -run $dockutil --remove all --no-restart
-killall Dock
-
 #replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/$loggedInUser
-
-killall Dock
 
 #add custom software icons
 if [ -d "/Applications/Microsoft Word.app" ]; then
@@ -29,8 +23,6 @@ else
     echo "Office not installed"
 fi
 
-killall Dock
-
 if [ -d "/Applications/Whatsapp.app" ]; then
 
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/WhatsApp.app" /Users/$loggedInUser
@@ -39,8 +31,6 @@ else
     echo "WhatsApp not installed"
 fi
 
-killall Dock
-
 if [ -d "/Applications/Google Chrome.app" ]; then
 
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
@@ -48,8 +38,6 @@ if [ -d "/Applications/Google Chrome.app" ]; then
 else
     echo "Google Chrome not installed"
 fi
-
-killall Dock
 
 if [ -d "/Applications/Microsoft Teams.app" ]; then
 

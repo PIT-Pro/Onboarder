@@ -18,18 +18,29 @@ else
 fi
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
-echo "Tweaking Finder experience" | tee -a $LOGFILE
+
+echo "emptying dock.."
+$userjob -user $loggedInUser -run $dockutil --remove all --no-restart
+killall Dock
+
+echo "Tweaking Finder experience.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/finder.sh)" | tee -a $LOGFILE
-echo "Adding items to Menubar" | tee -a $LOGFILE
+
+echo "Adding items to Menubar.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/menubar.sh)" | tee -a $LOGFILE
-echo "Changing wallpaper image to /Users/Shared/wallpaper.png" | tee -a $LOGFILE
+
+echo "Changing wallpaper image to /Users/Shared/wallpaper.png.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/wallpaper.sh)" | tee -a $LOGFILE
-echo "Changing profile picture to /Users/Shared/profile.png" | tee -a $LOGFILE
+
+echo "Changing profile picture to /Users/Shared/profile.png.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/profile.sh)" | tee -a $LOGFILE
-echo "Installing Canon Printer" | tee -a $LOGFILE
+
+echo "Installing Canon Printer.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/printer.sh)" | tee -a $LOGFILE
-echo "Configuring dock" | tee -a $LOGFILE
+
+echo "Configuring dock.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/dock.sh)" | tee -a $LOGFILE
+
 
 # Refresh Finder & System Preferences
 echo "Refreshing Finder and System Preferences" | tee -a $LOGFILE
