@@ -4,19 +4,9 @@ userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
- #remove all dock icons first
-
-defaults write com.apple.dock persistent-apps -array
-killall Dock
-
-sleep 5
-
 #empty dock
-
 $userjob -user $loggedInUser -run $dockutil --remove all --no-restart
 killall Dock
-
-
 
 #replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
