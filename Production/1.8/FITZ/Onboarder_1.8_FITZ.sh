@@ -19,10 +19,6 @@ fi
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
 
-echo "emptying dock.."
-$userjob -user $loggedInUser -run $dockutil --remove all --no-restart
-killall Dock
-
 echo "Tweaking Finder experience.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/SITE/finder.sh)" | tee -a $LOGFILE
 
