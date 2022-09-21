@@ -20,6 +20,14 @@ $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime
 sleep 2
 
 #add custom software icons
+if [ -d "/Applications/Google Chrome.app" ]; then
+
+    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
+
+else
+    echo "Google Chrome not installed"
+fi
+
 if [ -d "/Applications/Microsoft Word.app" ]; then
 
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Word.app" --no-restart /Users/$loggedInUser
@@ -39,16 +47,6 @@ if [ -d "/Applications/Whatsapp.app" ]; then
 
 else
     echo "WhatsApp not installed"
-fi
-
-sleep 2
-
-if [ -d "/Applications/Google Chrome.app" ]; then
-
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
-
-else
-    echo "Google Chrome not installed"
 fi
 
 sleep 2
