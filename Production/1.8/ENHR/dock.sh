@@ -8,6 +8,8 @@ loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ &&
  $userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser --no-restart
 killall Dock
 
+sleep 5
+
 #replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
@@ -15,7 +17,7 @@ $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System P
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/$loggedInUser
 
-sleep 5
+sleep 2
 
 #add custom software icons
 if [ -d "/Applications/Microsoft Word.app" ]; then
