@@ -7,7 +7,7 @@ loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ &&
  #remove all items from Dock
  $userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser --no-restart
 killall Dock
-killall cfprefsd
+
 
 #replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
@@ -51,8 +51,6 @@ if [ -d "/Applications/Microsoft Teams.app" ]; then
 else
     echo "Microsoft Teams not installed"
 fi
-
-killall Dock
 
 # Don't show recent applications in Dock
 $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
