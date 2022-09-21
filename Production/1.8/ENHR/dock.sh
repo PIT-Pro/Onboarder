@@ -41,16 +41,6 @@ fi
 
 sleep 2
 
-if [ -d "/Applications/Whatsapp.app" ]; then
-
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/WhatsApp.app" /Users/$loggedInUser
-
-else
-    echo "WhatsApp not installed"
-fi
-
-sleep 2
-
 if [ -d "/Applications/Microsoft Teams.app" ]; then
 
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Teams.app" --no-restart /Users/$loggedInUser
