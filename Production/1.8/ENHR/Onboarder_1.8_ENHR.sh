@@ -20,7 +20,7 @@ fi
 echo "START OF SCRIPT" | tee -a $LOGFILE
 
 echo "emptying dock.."
-$userjob -user $loggedInUser -run $dockutil --remove all --no-restart
+$userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser --no-restart
 killall Dock
 killall cfprefsd
 
