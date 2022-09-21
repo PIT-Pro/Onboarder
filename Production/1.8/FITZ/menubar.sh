@@ -13,8 +13,6 @@ $userjob -user $loggedInUser -run defaults write com.apple.menuextra.battery Sho
 # Tijd en datum (works in Big Sur/Monterey)
 $userjob -user $loggedInUser -run defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d h:mm:ss"
 $userjob -user $loggedInUser -run defaults write com.apple.menuextra.clock.plist ShowDayOfMonth -bool true
-# Show Bluetooth in menubar (works in Big Sur/Monterey)
-$userjob -user $loggedInUser -run defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18
 # Show Time Machine in menubar (works in Big Sur/Monterey)
 $userjob -user $loggedInUser -run open "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
 # Show Volume in menubar (works in Big Sur/Monterey)
@@ -23,5 +21,3 @@ $userjob -user $loggedInUser -run defaults write com.apple.systemuiserver menuEx
 $userjob -user $loggedInUser -run open "/System/Library/CoreServices/Menu Extras/vpn.menu"
 # Show VPN connected time in menubar (works in Big Sur/Monterey)
 $userjob -user $loggedInUser -run defaults write com.apple.networkConnect VPNShowTime -string "1"
-# Enable fast user switching
-$userjob -user $loggedInUser -run defaults write ~/Library/Preferences/com.apple.systemuiserver.plist menuExtras -array-add '<string>/System/Library/CoreServices/Menu Extras/User.menu</string>'
