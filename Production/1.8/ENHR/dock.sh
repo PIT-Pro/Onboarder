@@ -22,7 +22,7 @@ sleep 2
 #add custom software icons
 if [ -d "/Applications/Google Chrome.app" ]; then
 
-    $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
+     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Google Chrome.app" --no-restart /Users/$loggedInUser
 
 else
     echo "Google Chrome not installed"
@@ -34,7 +34,7 @@ if [ -d "/Applications/Microsoft Word.app" ]; then
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Outlook.app" --no-restart /Users/$loggedInUser
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Excel.app" --no-restart /Users/$loggedInUser
     $userjob -user $loggedInUser -run $dockutil --add "/Applications/Microsoft Powerpoint.app" --no-restart /Users/$loggedInUser
-    
+
 else
     echo "Office not installed"
 fi
