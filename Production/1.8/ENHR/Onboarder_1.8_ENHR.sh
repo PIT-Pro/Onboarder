@@ -19,11 +19,6 @@ fi
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
 
-echo "emptying dock.."
-$userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser --no-restart
-killall Dock
-killall cfprefsd
-
 sleep 5
 
 echo "Tweaking Finder experience.." | tee -a $LOGFILE
