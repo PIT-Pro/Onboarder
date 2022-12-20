@@ -49,6 +49,8 @@ else
     echo "Microsoft Teams not installed"
 fi
 
+$userjob -user $loggedInUser -run $dockutil --add /Users/$loggedInUser/Downloads --label 'Downloads' --sort dateadded --no-restart /Users/$loggedInUser
+
 sleep 2
 
 # Don't show recent applications in Dock
