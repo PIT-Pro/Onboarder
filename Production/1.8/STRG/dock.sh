@@ -56,11 +56,3 @@ $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bo
 
 killall Dock
 exit 0
-
-
-
-
-
-
-
-
