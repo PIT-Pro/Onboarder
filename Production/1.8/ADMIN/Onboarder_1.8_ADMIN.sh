@@ -27,14 +27,9 @@ echo "Tweaking Finder experience.." | tee -a $LOGFILE
 echo "Adding items to Menubar.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/menubar.sh)" | tee -a $LOGFILE
 
-echo "Changing wallpaper image to /Users/Shared/wallpaper.png.." | tee -a $LOGFILE
+echo "Changing wallpaper image to Solid Red and disabling screensaver.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/wallpaper.sh)" | tee -a $LOGFILE
 
-echo "Changing profile picture to /Users/Shared/profile.png.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/profile.sh)" | tee -a $LOGFILE
-
-echo "Installing Canon Printer.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/printer.sh)" | tee -a $LOGFILE
 
 echo "Configuring dock.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/dock.sh)" | tee -a $LOGFILE

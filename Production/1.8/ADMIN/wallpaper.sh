@@ -7,6 +7,9 @@
 # Run script as user
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
 
+#disable wallpaper
+sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
+
 #check if wallpaper exists, then applies it.
 FILE=/Library/Desktop Pictures/Solid Colors/Solid Red.png
 if [ -f "$FILE" ] ; then
