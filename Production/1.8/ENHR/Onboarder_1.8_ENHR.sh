@@ -39,6 +39,8 @@ echo "Installing Canon Printer.." | tee -a $LOGFILE
 echo "Configuring dock.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/dock.sh)" | tee -a $LOGFILE
 
+echo "Allowing standard users to change Wifi settings.." | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/wifi.sh)" | tee -a $LOGFILE
 
 # Refresh Finder & System Preferences
 echo "Refreshing Finder and System Preferences" | tee -a $LOGFILE
