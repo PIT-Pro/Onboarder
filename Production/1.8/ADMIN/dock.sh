@@ -18,8 +18,6 @@ $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Utilitie
 
 sleep 2
 
-sleep 2
-
 # Don't show recent applications in Dock
 $userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
 

@@ -2,11 +2,11 @@
 #
 # per user settings for PIT Pro clients
 #
-# 2021.12.21 version 1.3 by Thomas Boom | PIT Pro B.V.
+# 2023.1.24 version 1.8 by Thomas Boom | PIT Pro B.V.
 #
 # Run script as user
 
-#disable wallpaper
+#disable screensaver
 sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
 
 #Download macos-wallpaper from GitHub
@@ -17,3 +17,6 @@ unzip "/Library/Addigy/PIT Pro/wallpaper.zip" | tee -a $LOGFILE
 
 #set wallpaper to solid red
 /Library/Addigy/PIT\ Pro/wallpaper set-solid-color C91D22 | tee -a $LOGFILE
+
+#delete zipfile
+rm -rf "/Library/Addigy/PIT Pro/wallpaper.zip"

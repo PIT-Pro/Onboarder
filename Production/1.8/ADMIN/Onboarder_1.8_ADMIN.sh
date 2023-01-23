@@ -2,12 +2,8 @@
 #
 # per user settings for PIT Pro clients
 #
-# 2021.12.21 version 1.3 by Thomas Boom | PIT Pro B.V.
-## PREREQUISITE: dockutil, 
-#
-# Run script as user
+# 2023.1.24 version 1.8 by Thomas Boom | PIT Pro B.V.
 
-userjob=/Library/Addigy/user-job
 LOGFILE=/Users/Shared/onboarder_log.txt
 
 if [ -e $LOGFILE ]
@@ -29,7 +25,6 @@ echo "Adding items to Menubar.." | tee -a $LOGFILE
 
 echo "Changing wallpaper image to Solid Red and disabling screensaver.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/wallpaper.sh)" | tee -a $LOGFILE
-
 
 echo "Configuring dock.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/dock.sh)" | tee -a $LOGFILE
