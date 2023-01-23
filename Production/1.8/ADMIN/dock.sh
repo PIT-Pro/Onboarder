@@ -2,10 +2,9 @@
 
 userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
-loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
- 
- #remove all items from Dock
-$userjob --user localadmin -run $dockutil --remove all /Users/localadmin
+
+#remove all items from Dock
+ $userjob --user localadmin -run $dockutil --remove all /Users/localadmin
 killall Dock
 
 sleep 5

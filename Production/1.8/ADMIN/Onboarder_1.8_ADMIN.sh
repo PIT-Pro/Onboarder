@@ -4,7 +4,7 @@
 #
 # 2023.1.24 version 1.8 by Thomas Boom | PIT Pro B.V.
 
-LOGFILE=/Users/Shared/onboarder_log.txt
+LOGFILE=/Users/Shared/onboarder_admin_log.txt
 
 if [ -e $LOGFILE ]
 then

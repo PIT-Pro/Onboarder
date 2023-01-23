@@ -4,7 +4,10 @@
 #
 # 2023.1.24 version 1.8 by Thomas Boom | PIT Pro B.V.
 #
+
 # Run script as user
+userjob=/Library/Addigy/user-job
+wallpaper=/Library/Addigy/PIT\ Pro/wallpaper
 
 #disable screensaver
 sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
@@ -16,7 +19,7 @@ sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTi
 unzip "/Library/Addigy/PIT Pro/wallpaper.zip" | tee -a $LOGFILE
 
 #set wallpaper to solid red
-$userjob -user $LoggedInUser -run /Library/Addigy/PIT\ Pro/wallpaper set-solid-color C91D22 | tee -a $LOGFILE
+$userjob -user localadmin -run $wallpaper set-solid-color C91D22 | tee -a $LOGFILE
 
 #delete zipfile and 'macos-wallpaper'
 rm -rf "/Library/Addigy/PIT Pro/wallpaper.zip"
