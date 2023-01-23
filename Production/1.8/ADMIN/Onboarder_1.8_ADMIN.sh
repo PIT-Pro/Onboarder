@@ -18,16 +18,16 @@ echo "START OF SCRIPT" | tee -a $LOGFILE
 sleep 5
 
 echo "Tweaking Finder experience.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/finder.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ADMIN/finder.sh)" | tee -a $LOGFILE
 
 echo "Adding items to Menubar.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/menubar.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ADMIN/menubar.sh)" | tee -a $LOGFILE
 
 echo "Changing wallpaper image to Solid Red and disabling screensaver.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/wallpaper.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ADMIN/wallpaper.sh)" | tee -a $LOGFILE
 
 echo "Configuring dock.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ENHR/dock.sh)" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ADMIN/dock.sh)" | tee -a $LOGFILE
 
 
 # Refresh Finder & System Preferences
