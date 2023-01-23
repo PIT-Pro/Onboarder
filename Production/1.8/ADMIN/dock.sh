@@ -5,29 +5,21 @@ dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
  
  #remove all items from Dock
- $userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser
+$userjob --user localadmin -run $dockutil --remove all /Users/localadmin
 killall Dock
 
 sleep 5
 
 #replace dock macOS icons (Dockutil needs to be installed)
-$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Utilities/Terminal.app" --no-restart /Users/$loggedInUser
+$userjob -user localadmin -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/localadmin
+$userjob -user localadmin -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/localadmin
+$userjob -user localadmin -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/localadmin
+$userjob -user localadmin -run $dockutil --add "/System/Applications/Utilities/Terminal.app" --no-restart /Users/localadmin
 
 sleep 2
 
 # Don't show recent applications in Dock
-$userjob -user $loggedInUser -run defaults write com.apple.dock show-recents -bool false 
+$userjob -user localadmin -run defaults write com.apple.dock show-recents -bool false 
 
 killall Dock
 exit 0
-
-
-
-
-
-
-
-

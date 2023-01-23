@@ -16,7 +16,7 @@ sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTi
 unzip "/Library/Addigy/PIT Pro/wallpaper.zip" | tee -a $LOGFILE
 
 #set wallpaper to solid red
-/Library/Addigy/PIT\ Pro/wallpaper set-solid-color C91D22 | tee -a $LOGFILE
+$userjob --user localadmin -run /Library/Addigy/PIT\ Pro/wallpaper set-solid-color C91D22 | tee -a $LOGFILE
 
 #delete zipfile and 'macos-wallpaper'
 rm -rf "/Library/Addigy/PIT Pro/wallpaper.zip"
