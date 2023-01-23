@@ -6,8 +6,6 @@
 ## PREREQUISITE: dockutil, 
 #
 # Run script as user
-
-userjob=/Library/Addigy/user-job
 LOGFILE=/Users/Shared/onboarder_admin_log.txt
 
 if [ -e $LOGFILE ]
