@@ -1,5 +1,10 @@
 #!/bin/bash
+#
+# per user settings for PIT Pro clients
+#
+# 2023.1.25 version 1.8 by Thomas Boom | PIT Pro B.V.
 
+#Set variables
 userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )

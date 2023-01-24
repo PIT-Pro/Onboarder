@@ -2,8 +2,8 @@
 #
 # per user settings for PIT Pro clients
 #
-# 2021.12.21 version 1.3 by Thomas Boom | PIT Pro B.V.
-#
+# 2023.1.25 version 1.8 by Thomas Boom | PIT Pro B.V.
+
 # Run script as user
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
 userjob=/Library/Addigy/user-job
