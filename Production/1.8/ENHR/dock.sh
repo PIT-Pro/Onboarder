@@ -3,7 +3,8 @@
 userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
- 
+OSbuild=$(sw_vers -ProductVersion)
+
  #remove all items from Dock
  $userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser
 killall Dock

@@ -3,7 +3,8 @@
 userjob=/Library/Addigy/user-job
 dockutil=/usr/local/bin/dockutil
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
- 
+OSbuild=$(sw_vers -ProductVersion)
+
  #remove all items from Dock
  $userjob --user $loggedInUser -run $dockutil --remove all /Users/$loggedInUser
 killall Dock
@@ -13,7 +14,16 @@ sleep 5
 #replace dock macOS icons ($dockutil moet geinstalleerd zijn/in policy staan)
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Launchpad.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/$loggedInUser
-$userjob -user $loggedInUser -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/$loggedInUser
+
+#check if Mac is running Monterey or Ventura for name change System Settings/Preferences..
+if [[ $OSbuild = 13.* ]] ; then
+    echo "Running Ventura.."
+    $userjob -user localadmin -run $dockutil --add "/System/Applications/System Settings.app" --no-restart /Users/localadmin
+else
+    echo "Running Monterey.."
+    $userjob -user localadmin -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/localadmin
+fi
+
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/$loggedInUser
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/FaceTime.app" --no-restart /Users/$loggedInUser
 
