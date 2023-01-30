@@ -4,7 +4,7 @@
 #
 # 2023.1.24 version 1.8 by Thomas Boom | PIT Pro B.V.
 
-LOGFILE=/Users/Shared/onboarder_admin_log.txt
+LOGFILE=/Library/Addigy/PIT\ Pro/onboarder_admin_log.txt
 
 if [ -e $LOGFILE ]
 then
@@ -28,6 +28,10 @@ echo "Changing wallpaper image to Solid Red and disabling screensaver.." | tee -
 
 echo "Configuring dock.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ADMIN/dock.sh)" | tee -a $LOGFILE
+
+echo "Setting profile picture for Local Admin
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.8/ADMIN/profile.sh)" | tee -a $LOGFILE
+
 
 
 # Refresh Finder & System Preferences
