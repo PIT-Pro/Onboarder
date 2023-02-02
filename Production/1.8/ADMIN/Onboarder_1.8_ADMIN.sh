@@ -9,7 +9,7 @@ OSbuild=$(sw_vers -ProductVersion)
 
 # global check if there is a user logged in
 if [ -z "$currentUser" -o "$currentUser" = "loginwindow" ]; then
-  echo "no user logged in, cannot proceed"
+  echo "no user logged in, cannot proceed" | tee -a $LOGFILE
   exit 1
 fi
 
