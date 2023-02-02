@@ -7,12 +7,21 @@
 
 # Run script as user
 userjob="/Library/Addigy/user-job"
+PITPROfolder="/Library/Addigy/PIT Pro"
 
 #disable screensaver
 sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
 
+if [ -d $PITPROfolder ]
+then
+    echo "PIT Pro folder already exists.. "
+else
+    echo "creating PIT Pro folder.."
+    mkdir "/Library/Addigy/PIT Pro"
+fi
+
 #Download 'macos-wallpaper' from GitHub
-/bin/bash -c "$(curl -fsSL https://github.com/sindresorhus/macos-wallpaper/releases/download/v2.3.1/wallpaper.zip -o "/Library/Addigy/PIT Pro/wallpaper.zip")" | tee -a $LOGFILE
+/bin/bash -c "$(curl -fsSL https://github.com/sindresorhus/macos-wallpaper/releases/download/v2.3.1/wallpaper.zip -o /Library/Addigy/PIT\ Pro/wallpaper.zip)" | tee -a $LOGFILE
 
 #Unzip to folder
 unzip /Library/Addigy/PIT\ Pro/wallpaper.zip -d /Library/Addigy/PIT\ Pro | tee -a $LOGFILE

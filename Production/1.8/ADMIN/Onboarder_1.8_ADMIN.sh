@@ -7,12 +7,19 @@
 LOGFILE=/Library/Addigy/PIT\ Pro/onboarder_admin_log.txt
 OSbuild=$(sw_vers -ProductVersion)
 
+# global check if there is a user logged in
+if [ -z "$currentUser" -o "$currentUser" = "loginwindow" ]; then
+  echo "no user logged in, cannot proceed"
+  exit 1
+fi
+
 if [ -e $LOGFILE ]
 then
     echo "onboarder_admin_log.txt exists, writing output to file.."
 else
     echo "onboarder_admin_log.txt does not exist, creating file.."
 fi
+
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
 echo "Mac is running $OSbuild"
