@@ -19,9 +19,11 @@ $userjob -user $loggedInUser -run $dockutil --add "/Applications/Safari.app" --n
 if [[ $OSbuild = 13.* ]] ; then
     echo "Running Ventura.."
     $userjob -user localadmin -run $dockutil --add "/System/Applications/System Settings.app" --no-restart /Users/localadmin
+    $userjob -user localadmin -run $dockutil --add "/System/Cryptexes/App/System/Applications/Safari.app" --no-restart /Users/localadmin
 else
-    echo "Running Monterey.."
+    echo "Running Monterey or lower.."
     $userjob -user localadmin -run $dockutil --add "/System/Applications/System Preferences.app" --no-restart /Users/localadmin
+    $userjob -user localadmin -run $dockutil --add "/Applications/Safari.app" --no-restart /Users/localadmin
 fi
 
 $userjob -user $loggedInUser -run $dockutil --add "/System/Applications/Calendar.app" --no-restart /Users/$loggedInUser
