@@ -6,6 +6,7 @@
 
 LOGFILE=/Library/Addigy/PIT\ Pro/onboarder_admin_log.txt
 OSbuild=$(sw_vers -ProductVersion)
+PITPROfolder="/Library/Addigy/PIT Pro"
 
 # global check if there is a user logged in
 if [ -z "$currentUser" -o "$currentUser" = "loginwindow" ]; then
@@ -20,6 +21,13 @@ else
     echo "onboarder_admin_log.txt does not exist, creating file.."
 fi
 
+if [ -d $PITPROfolder ]
+then
+    echo "PIT Pro folder already exists.. "
+else
+    echo "creating PIT Pro folder.."
+    mkdir "/Library/Addigy/PIT Pro"
+fi
 
 echo "START OF SCRIPT" | tee -a $LOGFILE
 echo "Mac is running $OSbuild"
