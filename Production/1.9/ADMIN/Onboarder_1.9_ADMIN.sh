@@ -6,12 +6,6 @@ LOGFILE=/Library/Addigy/PIT\ Pro/onboarder_admin_log.txt
 OSbuild=$(sw_vers -ProductVersion)
 PITPROfolder="/Library/Addigy/PIT Pro"
 
-# global check if there is a user logged in
-if [ -z "$currentUser" -o "$currentUser" = "loginwindow" ]; then
-  echo "no user logged in, cannot proceed" | tee -a $LOGFILE
-  exit 1
-fi
-
 if [ -e $LOGFILE ]
 then
     echo "onboarder_admin_log.txt exists, writing output to file.."
