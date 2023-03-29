@@ -113,7 +113,7 @@ echo "Allowing standard users to change Wifi settings.."
 }
 
 runDialog2(){
-    echo "Running Dialog.."
+    echo "Finishing.."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/ENHR/Scripts/dialog2.sh)"
 }
 
