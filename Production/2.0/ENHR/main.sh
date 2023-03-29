@@ -1,6 +1,5 @@
 #Variables
 LOGFILE="/Library/Addigy/PIT Pro/onboarder_log.txt"
-loggedInUser
 
 #Functions
 checkLog(){
