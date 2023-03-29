@@ -50,7 +50,7 @@ dialogCheck(){
 
 #Installs dockUtil if not found
 dockutilCheck(){
-  # Get the URL of the latest PKG From the Dialog GitHub repo
+  # Get the URL of the latest PKG From the dockUtil GitHub repo
   dialogURL=$(curl --silent --fail "https://api.github.com/repos/kcrawford/dockutil/releases/latest" | awk -F '"' "/browser_download_url/ && /pkg\"/ { print \$4; exit }")
   # Expected Team ID of the downloaded PKG
   expectedDialogTeamID="Z5J8CJBUWC"
@@ -67,9 +67,8 @@ dockutilCheck(){
     teamID=$(/usr/sbin/spctl -a -vv -t install "$tempDirectory/dockUtil.pkg" 2>&1 | awk '/origin=/ {print $NF }' | tr -d '()')
     # Install the package if Team ID validates
     if [ "$expectedDialogTeamID" = "$teamID" ] || [ "$expectedDialogTeamID" = "" ]; then
-      /usr/sbin/installer -pkg "$tempDirectory/Dialog.pkg" -target /
-      echo "dockUtil Team ID verification failed."
-      exit 1
+      /usr/sbin/installer -pkg "$tempDirectory/dockUtil.pkg" -target /
+      echo "dockUtil installed. Proceeding.."
     fi
     # Remove the temporary working directory when done
     /bin/rm -Rf "$tempDirectory"  
