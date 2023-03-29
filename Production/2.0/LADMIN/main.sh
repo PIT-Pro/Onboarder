@@ -97,11 +97,6 @@ runWallpaper(){
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/STRG/Scripts/wallpaper.sh)"
 }
 
-installPrinter(){
-    echo "Installing Canon Printer.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/STRG/Scripts/printer.sh)"
-}
-
 runDock(){
 echo "Configuring dock.."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/STRG/Scripts/dock.sh)"
