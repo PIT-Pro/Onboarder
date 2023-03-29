@@ -124,13 +124,13 @@ checkLog
 writeLog
 dialogCheck
 dockutilCheck
-#runDialog
+RunDialog
 runFinder
 runMenubar
 runWallpaper
 installPrinter
 runDock
 runWifi
-#runDialog2
+runDialog2
 
 exit 0
