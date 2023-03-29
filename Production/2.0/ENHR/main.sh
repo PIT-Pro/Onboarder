@@ -25,7 +25,7 @@ dialogCheck(){
   # Expected Team ID of the downloaded PKG
   expectedDialogTeamID="PWA5E9TQ59"
 
-  # Check for Dialog and install if not found
+  # Check for swiftDialog and install if not found
   if [ ! -e "/Library/Application Support/Dialog/Dialog.app" ]; then
     echo "Dialog not found. Installing..."
     # Create temporary working directory
@@ -38,12 +38,12 @@ dialogCheck(){
     # Install the package if Team ID validates
     if [ "$expectedDialogTeamID" = "$teamID" ] || [ "$expectedDialogTeamID" = "" ]; then
       /usr/sbin/installer -pkg "$tempDirectory/Dialog.pkg" -target /
-      echo "Dialog Team ID verification failed."
+      echo "swiftDialog Team ID verification failed."
       exit 1
     fi
     # Remove the temporary working directory when done
     /bin/rm -Rf "$tempDirectory"  
-  else echo "Dialog found. Proceeding..."
+  else echo "swiftDialog found. Proceeding..."
   fi
 }
 
@@ -54,7 +54,7 @@ dockutilCheck(){
   # Expected Team ID of the downloaded PKG
   expectedDialogTeamID="Z5J8CJBUWC"
 
-  # Check for Dialog and install if not found
+  # Check for dockUtil and install if not found
   if [ ! -e "/usr/local/bin/dockutil" ]; then
     echo "dockUtil not found. Installing..."
     # Create temporary working directory
@@ -75,9 +75,6 @@ dockutilCheck(){
   else echo "dockUtil found. Proceeding..."
   fi
 }
-
-
-echo "Running Script"
 
 runFinder(){
     echo "Tweaking Finder experience.."
@@ -109,8 +106,9 @@ echo "Allowing standard users to change Wifi settings.."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/ENHR/Scripts/wifi.sh)"
 }
 
-echo "Running Script"
+echo "Running Script.."
 
+#Run functions
 checkLog
 writeLog
 dialogCheck
