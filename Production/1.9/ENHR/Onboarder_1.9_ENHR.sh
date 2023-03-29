@@ -6,6 +6,13 @@
 
 LOGFILE=/Users/Shared/onboarder_log.txt
 
+if [ -e $LOGFILE ]
+then
+    echo "onboarder_log.txt exists, writing output to file.."
+else
+    echo "onboarder_log.txt does not exist, creating file.."
+fi
+
 echo "START OF SCRIPT" | tee -a $LOGFILE
 
 sleep 5
