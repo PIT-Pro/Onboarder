@@ -123,8 +123,8 @@ echo "Running Script.."
 checkLog
 writeLog
 dialogCheck
-dockutilCheck
 runDialog
+dockutilCheck
 runFinder
 runMenubar
 runWallpaper
