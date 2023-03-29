@@ -26,9 +26,6 @@ echo "Adding items to Menubar.." | tee -a $LOGFILE
 echo "Changing wallpaper image to /Users/Shared/wallpaper.png.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.9/ENHR/wallpaper.sh)" | tee -a $LOGFILE
 
-echo "Changing profile picture to /Users/Shared/profile.png.." | tee -a $LOGFILE
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.9/ENHR/profile.sh)" | tee -a $LOGFILE
-
 echo "Installing Canon Printer.." | tee -a $LOGFILE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/1.9/ENHR/printer.sh)" | tee -a $LOGFILE
 
