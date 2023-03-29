@@ -6,12 +6,23 @@ LOGFILE=/Library/Addigy/PIT\ Pro/onboarder_admin_log.txt
 OSbuild=$(sw_vers -ProductVersion)
 PITPROfolder="/Library/Addigy/PIT Pro"
 
-if [ -e $LOGFILE ]
+check_log(){
+    if [ -e "$LOGFILE" ];
 then
-    echo "onboarder_admin_log.txt exists, writing output to file.."
+    echo "onboarder_log.txt exists, writing output to file.."
 else
-    echo "onboarder_admin_log.txt does not exist, creating file.."
+    echo "onboarder_log.txt does not exist, creating file.."
+    touch "/Library/Addigy/PIT Pro/Onboarder_log.txt"
 fi
+}
+
+writeLog(){
+exec > >(tee "$LOGFILE") 2>&1
+echo "==> $(date "+%Y-%m-%d %H:%M:%S")"
+}
+
+check_log
+writeLog
 
 if [ -d $PITPROfolder ]
 then
