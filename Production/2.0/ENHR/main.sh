@@ -124,7 +124,7 @@ checkLog
 writeLog
 dialogCheck
 dockutilCheck
-RunDialog
+runDialog
 runFinder
 runMenubar
 runWallpaper
