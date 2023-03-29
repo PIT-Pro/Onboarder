@@ -1,15 +1,15 @@
 #Variables
-LOGFILE="/Library/Addigy/PIT Pro/Onderhoud-Pro_log.txt"
+LOGFILE="/Library/Addigy/PIT Pro/onboarder_log.txt"
 loggedInUser
 
 #Functions
 checkLog(){
     if [ -e "$LOGFILE" ];
 then
-    echo "Onderhoud-Pro_log.txt exists, writing output to file.."
+    echo "onboarder_log.txt exists, writing output to file.."
 else
-    echo "Onderhoud-Pro_log.txt does not exist, creating file.."
-    touch "/Library/Addigy/PIT Pro/Onderhoud-Pro_log.txt"
+    echo "onboarder_log.txt does not exist, creating file.."
+    touch "/Library/Addigy/PIT Pro/onboarder_log.txt"
 fi
 }
 
