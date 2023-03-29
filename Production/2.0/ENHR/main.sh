@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Variables
 LOGFILE="/Library/Addigy/PIT Pro/onboarder_log.txt"
 
@@ -75,6 +77,11 @@ dockutilCheck(){
   fi
 }
 
+runDialog(){
+    echo "Running Dialog.."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/ENHR/Scripts/dialog.sh)"
+}
+
 runFinder(){
     echo "Tweaking Finder experience.."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/ENHR/Scripts/finder.sh)"
@@ -105,6 +112,11 @@ echo "Allowing standard users to change Wifi settings.."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/ENHR/Scripts/wifi.sh)"
 }
 
+runDialog2(){
+    echo "Running Dialog.."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/ENHR/Scripts/dialog2.sh)"
+}
+
 echo "Running Script.."
 
 #Run functions
@@ -112,11 +124,13 @@ checkLog
 writeLog
 dialogCheck
 dockutilCheck
+#runDialog
 runFinder
 runMenubar
 runWallpaper
 installPrinter
 runDock
 runWifi
+#runDialog2
 
 exit 0
