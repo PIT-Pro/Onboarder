@@ -39,8 +39,7 @@ dialogCheck(){
     # Install the package if Team ID validates
     if [ "$expectedDialogTeamID" = "$teamID" ] || [ "$expectedDialogTeamID" = "" ]; then
       /usr/sbin/installer -pkg "$tempDirectory/Dialog.pkg" -target /
-      echo "swiftDialog Team ID verification failed."
-      exit 1
+     echo "swiftDialog succesfully installed. Proceeding.."
     fi
     # Remove the temporary working directory when done
     /bin/rm -Rf "$tempDirectory"  
