@@ -77,42 +77,37 @@ dockutilCheck(){
 
 runDialog(){
     echo "Running Dialog.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/dialog.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/dialog.sh)"
 }
 
 runFinder(){
     echo "Tweaking Finder experience.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/finder.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/finder.sh)"
 }
 
 runMenubar(){
     echo "Adding items to Menubar.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/menubar.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/menubar.sh)"
 }
 
 runWallpaper(){
     echo "Changing wallpaper image to /Users/Shared/wallpaper.png.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/wallpaper.sh)"
-}
-
-installPrinter(){
-    echo "Installing Canon Printer.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/printer.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/wallpaper.sh)"
 }
 
 runDock(){
 echo "Configuring dock.."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/dock.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/dock.sh)"
 }
 
 runWifi(){
 echo "Allowing standard users to change Wifi settings.."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/wifi.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/wifi.sh)"
 }
 
 runDialog2(){
     echo "Finishing.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/KDB/Scripts/dialog2.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PIT-Pro/Onboarder/main/Production/2.0/PITP/Scripts/dialog2.sh)"
 }
 
 echo "Running Script.."
@@ -125,7 +120,7 @@ runDialog
 dockutilCheck
 runFinder
 runMenubar
-#runWallpaper
+runWallpaper
 installPrinter
 runDock
 runWifi
